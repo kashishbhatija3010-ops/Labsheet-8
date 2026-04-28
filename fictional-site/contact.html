@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – VORA Studio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="logo">VORA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1>Get in Touch</h1>
+    <p>Let us create something beautiful together.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section contact-section">
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+      <h3>Our Details</h3>
+      <p>📍 42 Design Lane, Hauz Khas, New Delhi – 110016</p>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 hello@vorastudio.in</p>
+      <br>
+      <p>⏰ Mon–Sat: 10 AM – 7 PM</p>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <form class="contact-form" action="php/contact.php" method="POST">
+      <label>Your Name *</label>
+      <input type="text" name="name" placeholder="Full Name" required />
+
+      <label>Email Address *</label>
+      <input type="email" name="email" placeholder="your@email.com" required />
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="+91 00000 00000" />
+
+      <label>Service Interested In</label>
+      <select name="service">
+        <option value="">-- Select --</option>
+        <option>Residential Design</option>
+        <option>Commercial Spaces</option>
+        <option>Hospitality Design</option>
+        <option>Concept & Styling</option>
+        <option>Space Planning</option>
+      </select>
+
+      <label>Message *</label>
+      <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-cols">
+      <div><h4>VORA Studio</h4><p>New Delhi, India</p></div>
+      <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a></div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 VORA Studio.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
