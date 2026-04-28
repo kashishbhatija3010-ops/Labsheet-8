@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest – Online Book Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <div class="logo">📚 BookNest</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Welcome to BookNest</h1>
+    <p>Discover your next favourite book. Thousands of titles at great prices.</p>
+    <a href="books.html" class="btn">Browse Books</a>
+  </section>
+
+  <!-- FEATURED BOOKS SECTION -->
+  <section class="featured">
+    <h2>Featured Books</h2>
+    <div class="book-grid" id="featured-grid">
+      <!-- Filled by JavaScript -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BookNest. All rights reserved.</p>
+  </footer>
+
+  <script src="js/books.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    // Show first 4 featured books on home page
+    renderBooks(featuredBooks, 'featured-grid');
+    updateCartCount();
+  </script>
+</body>
+</html>
