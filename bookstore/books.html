@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Books – BookNest</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">📚 BookNest</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- SEARCH & FILTER BAR -->
+  <section class="filter-bar">
+    <input type="text" id="search" placeholder="Search books..." oninput="filterBooks()" />
+    <select id="genre-filter" onchange="filterBooks()">
+      <option value="">All Genres</option>
+      <option value="Fiction">Fiction</option>
+      <option value="Science">Science</option>
+      <option value="History">History</option>
+      <option value="Self-Help">Self-Help</option>
+    </select>
+  </section>
+
+  <!-- BOOKS GRID -->
+  <section class="featured">
+    <h2>All Books</h2>
+    <div class="book-grid" id="all-books-grid">
+      <!-- Filled by JS -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BookNest. All rights reserved.</p>
+  </footer>
+
+  <script src="js/books.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    renderBooks(allBooks, 'all-books-grid');
+    updateCartCount();
+
+    function filterBooks() {
+      const query  = document.getElementById('search').value.toLowerCase();
+      const genre  = document.getElementById('genre-filter').value;
+      const result = allBooks.filter(b => {
+        const matchName  = b.title.toLowerCase().includes(query);
+        const matchGenre = genre === '' || b.genre === genre;
+        return matchName && matchGenre;
+      });
+      renderBooks(result, 'all-books-grid');
+    }
+  </script>
+</body>
+</html>
