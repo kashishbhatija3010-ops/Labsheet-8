@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – VORA Studio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="logo">VORA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-hero">
+    <h1>Our Portfolio</h1>
+    <p>A selection of spaces we have designed with care.</p>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <section class="portfolio-section">
+    <div class="filter-btns">
+      <button class="filter-btn active" onclick="filter('all', this)">All</button>
+      <button class="filter-btn" onclick="filter('residential', this)">Residential</button>
+      <button class="filter-btn" onclick="filter('commercial', this)">Commercial</button>
+      <button class="filter-btn" onclick="filter('hospitality', this)">Hospitality</button>
+    </div>
+
+    <!-- PORTFOLIO GRID -->
+    <div class="portfolio-grid" id="portfolio-grid">
+      <div class="p-card" data-cat="residential">
+        <div class="p-img">🛋️</div>
+        <div class="p-info"><h3>The Kapoor Residence</h3><p>Residential · Delhi</p></div>
+      </div>
+      <div class="p-card" data-cat="commercial">
+        <div class="p-img">💼</div>
+        <div class="p-info"><h3>Nexus Tech Office</h3><p>Commercial · Gurugram</p></div>
+      </div>
+      <div class="p-card" data-cat="hospitality">
+        <div class="p-img">🍽️</div>
+        <div class="p-info"><h3>Terrazzo Restaurant</h3><p>Hospitality · Mumbai</p></div>
+      </div>
+      <div class="p-card" data-cat="residential">
+        <div class="p-img">🪟</div>
+        <div class="p-info"><h3>Skyline Penthouse</h3><p>Residential · Bangalore</p></div>
+      </div>
+      <div class="p-card" data-cat="commercial">
+        <div class="p-img">🏬</div>
+        <div class="p-info"><h3>Aarya Boutique</h3><p>Commercial · Jaipur</p></div>
+      </div>
+      <div class="p-card" data-cat="hospitality">
+        <div class="p-img">🏨</div>
+        <div class="p-info"><h3>The Ivory Hotel</h3><p>Hospitality · Goa</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-cols">
+      <div><h4>VORA Studio</h4><p>New Delhi, India</p></div>
+      <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 VORA Studio.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Filter portfolio cards by category */
+    function filter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.p-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
